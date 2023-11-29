@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: nome-do-container-postgres
+    environment:
+      POSTGRES_DB: voch-tech
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    networks:
+      - minha-rede
+networks:
+  minha-rede:
+    driver: bridge
